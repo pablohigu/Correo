@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import io.realm.Realm;
 import moviles.pablohiguero.appcorreo.Adapters.MailAdapter;
 import moviles.pablohiguero.appcorreo.Model.Mail;
 import moviles.pablohiguero.appcorreo.R;
@@ -22,9 +23,10 @@ public class DataFragment extends Fragment {
     private RecyclerView recyclerView;
     private MailAdapter adapter;
     private DataListener callback;
+    private Realm realm;
+    private List<Mail> mailList;
 
     public DataFragment() {
-        // Constructor vacío
     }
     public interface DataListener {
         void sendData(Mail mail);
@@ -46,6 +48,9 @@ public class DataFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_data, container, false);
         recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        realm = Realm.getDefaultInstance();
+        mailList = realm.copyFromRealm(realm.where(Mail.class).findAll());
+        setMailList(mailList);
         return view;
     }
 

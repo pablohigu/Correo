@@ -10,8 +10,6 @@
     android:paddingTop="12dp"
     android:paddingBottom="12dp"
     android:background="?android:attr/selectableItemBackground">
-
-    <!-- Icon with sender's initial -->
     <TextView
         android:id="@+id/icon_text"
         android:layout_width="40dp"
@@ -26,7 +24,6 @@
         tools:text="E"
         tools:backgroundTint="@android:color/holo_orange_dark" />
 
-    <!-- Subject (Top line, bold) -->
     <TextView
         android:id="@+id/textView_subject"
         android:layout_width="0dp"
@@ -43,7 +40,7 @@
         app:layout_constraintVertical_chainStyle="packed"
         tools:text="Cena Empresa" />
 
-    <!-- Message (Bottom line, regular) -->
+
     <TextView
         android:id="@+id/textView_message"
         android:layout_width="0dp"
@@ -57,12 +54,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:text="Queridos amigos, la cena de empresa de este año será en el mismo restaurante que..." />
 
-    <!-- Sender (Hidden, but required by Adapter) -->
     <TextView
         android:id="@+id/textView_sender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
         tools:text="Empresa" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

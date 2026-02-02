@@ -24,8 +24,6 @@ public class DetailsFragment extends Fragment {
         messageTextView = view.findViewById(R.id.messageTextView);
         return view;
     }
-
-    // ÚNICO MÉTODO: Recibe el objeto y rellena los datos
     public void renderMail(Mail mail) {
         if (mail != null) {
             subjectTextView.setText("Subject: " + mail.getSubject());

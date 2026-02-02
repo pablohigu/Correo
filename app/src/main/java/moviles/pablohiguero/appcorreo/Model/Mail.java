@@ -13,7 +13,6 @@ public class Mail extends RealmObject {
     private String Message;
     private String SenderName;
     private String color;
-
     public Mail() {
     }
 

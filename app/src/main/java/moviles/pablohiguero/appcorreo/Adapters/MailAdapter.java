@@ -63,11 +63,10 @@ public class MailAdapter extends RecyclerView.Adapter<MailAdapter.MailViewHolder
             if (mail.getSenderName() != null && !mail.getSenderName().isEmpty()) {
                 iconText.setText(String.valueOf(mail.getSenderName().charAt(0)));
             } else {
-                iconText.setText("?"); // Por si no hay nombre
+                iconText.setText("?");
             }
             String colorHex = mail.getColor();
-
-            // Si el color es nulo, gris por defecto
+            // gris por defecto
             if (colorHex == null || colorHex.isEmpty()) {
                 colorHex = "#CCCCCC";
             }
